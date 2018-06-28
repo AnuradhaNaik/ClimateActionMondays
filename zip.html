@@ -100,7 +100,7 @@
                     <br>
                     <center>
                         <div>
-                            <input type="text" placeholder="Enter your zipcode" name="" style="    outline: none;
+                            <input id="cdval" type="text" placeholder="Enter your zipcode" name="" style="    outline: none;
     padding: 9px;
     letter-spacing: 0.1em;    border: 4px double gainsboro;
     margin-top: 3px;">
@@ -194,18 +194,25 @@ padding:8px;
                         <div id="main-table">
                          
                        </div>
+                       <h4 id="repheader" style="color:orangered;display: none;padding:8px">Not a valid Zip Code</h4>
                         <div id="all-reps" style="display: none">
-                          <h3 style="padding: 7px;
+  
+
+
+
+
+                          <h3  style="padding: 7px;
     padding-top: 17px;
     padding-bottom: 0px;
     margin-top: 6%;
-    color: #2d2d2d;">Reps in </h3>
+
+    color: #2d2d2d;">Reps in <span id="cdistrict"></span></h3>
 
 
 
 
 <!-- Reps chunk starts -->
-                            <div style="margin-top: 70px;color:grey;" class="reps-in-senate"><big style="border-bottom:1px double gainsboro">Senate</big>
+                            <div style="margin-top: 70px;color:#525252;" class="reps-in-senate"><big style="border-bottom:1px double gainsboro">Senate</big>
                             <!--Candidate Starts -->
                             <div style="padding: 3%;padding-top:20px;">
                                 <img src="img/ke.jpg" style="width: 200px;border: 1px solid gainsboro">
@@ -230,7 +237,7 @@ padding:8px;
 
 
     <!-- Reps chunk starts -->
-                            <div style="margin-top: 70px;color:grey;" class="reps-in-house"><big style="border-bottom:1px double gainsboro">House</big>
+                            <div style="margin-top: 70px;color:#525252;" class="reps-in-house"><big style="border-bottom:1px double gainsboro">House</big>
 
                               <!--Candidate Starts -->
                             <div style="padding: 3%;padding-top:20px;">
@@ -259,10 +266,36 @@ padding:8px;
             </div>
         </div>
     </section>
+
+    <script src="vendor/congressional-districts/index.js"></script>
+
+                        
     <script type="text/javascript">
         function findreps() {
 
-             $('#all-reps').velocity("fadeIn");
+            $('#all-reps').velocity("fadeOut");  
+            $('#repheader').velocity("fadeOut");
+               var zipcode=$('#cdval').val();
+               var confdist=confDist(zipcode);
+               console.log(' '+confdist);
+
+               if(confdist==1){
+
+                            var St=getState(zipcode);
+                            var dist=getDistricts(zipcode);
+                            var c=0;
+                            for(c=0;c<dist.length;c++){
+                                console.log(St+'-'+dist[c]);
+                            }
+                            $('#cdistrict').html(statenameabf(St));
+                            $('#all-reps').velocity("fadeIn");
+                              
+
+                        }
+                            else{
+                                $('#repheader').velocity("fadeIn");
+                           }
+
         
         }
     </script>
@@ -644,6 +677,7 @@ We're building an army of young people to make climate change an urgent priority
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
     <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+ 
     <!-- Custom scripts for this template -->
     <script src="js/creative.min.js"></script>
     <script src="js/velocity.min.js"></script>
