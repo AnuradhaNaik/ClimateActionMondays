@@ -60,7 +60,7 @@
                         <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#contact">All Data</a>
+                        <a class="nav-link js-scroll-trigger" href="alldata.ht">All Data</a>
                     </li>
                 </ul>
             </div>
@@ -178,11 +178,36 @@
 .response-no:before{
     content: "No";
 }
+.pledgebullet{
+
+    font-size: 14px;margin-bottom: -3px;
+}
 .pledgebullet:before{
 
 content:"‣";
-font-size: 36px;
+font-size: 26px;
 padding:8px;
+}
+.party{
+    font-weight: 600;
+}
+.repub{
+color: #ff4804;
+}
+.dem{
+color: #0909bd;
+}
+.green{
+color: #8bc34a;
+}
+.noparty{
+color: #a09e83;
+}
+.is.incumbent:before{
+content: "Incumbent";
+}
+.is.not.incumbent:before{
+content: "";
 }
  @media only screen and (max-width: 600px) {
     .table_ ,table {
@@ -212,52 +237,16 @@ padding:8px;
 
 
 <!-- Reps chunk starts -->
-                            <div style="margin-top: 70px;color:#525252;" class="reps-in-senate"><big style="border-bottom:1px double gainsboro">Senate</big>
-                            <!--Candidate Starts -->
-                            <div style="padding: 3%;padding-top:20px;">
-                                <img src="img/ke.jpg" style="width: 200px;border: 1px solid gainsboro">
-                                    <h5 style="
-    margin-top: 3%;
-  
-">Rep. Keith Ellison(D) </h5>
-                                    <h6 style="
-    /* border-bottom: 2px solid; */
-    margin-bottom: 0px;
-">MIN-73
-</h6>
-<p class="pledgebullet" style="text-align: left;max-width: 500px;margin-top: 13px"><big>Off Act Pledge : <span class="response-yes"></span> </big></p>
-<p  class="pledgebullet" style="text-align: left;max-width: 500px"><big>No Fossil Fuel Money Pledge : <span class="response-yes"></span></big></p>
-
-                               
-
-                            </div>
-                            <!--Candidate Finishes -->
+                            <div style="margin-top: 70px;color:#525252;" id="found-senate" class="reps-in-senate"><big style="border-bottom:1px double gainsboro">Senate</big>
+                         
                             </div>
                             <!-- Reps chunk finishes-->
 
 
     <!-- Reps chunk starts -->
-                            <div style="margin-top: 70px;color:#525252;" class="reps-in-house"><big style="border-bottom:1px double gainsboro">House</big>
+                            <div style="margin-top: 70px;color:#525252;"  id="found-house" class="reps-in-house"><big style="border-bottom:1px double gainsboro">House</big>
 
-                              <!--Candidate Starts -->
-                            <div style="padding: 3%;padding-top:20px;">
-                              
-                               <img src="img/ke.jpg" style="width: 200px;border: 1px solid gainsboro">
-                                    <h5 style="
-    margin-top: 3%;
-  
-">Rep. Keith Ellison(D) </h5>
-                                    <h6 style="
-    /* border-bottom: 2px solid; */
-    margin-bottom: 0px;
-">MIN-73
-</h6>
-<p class="pledgebullet" style="text-align: left;max-width: 500px;margin-top: 13px"><big>Off Act Pledge : <span class="response-yes"></span> </big></p>
-<p  class="pledgebullet" style="text-align: left;max-width: 500px"><big>No Fossil Fuel Money Pledge : <span class="response-yes"></span></big></p>
 
-                               
-
-                            </div> <!--Candidate Finishes -->
                             </div>
                             <!-- Reps chunk finishes-->
                         </div>
@@ -269,26 +258,93 @@ padding:8px;
 
     <script src="vendor/congressional-districts/index.js"></script>
 
-                        
+                      <script src="js/papaparse.min.js"></script>  
     <script type="text/javascript">
+   
         function findreps() {
+             $('#found-house').html('<h4>House</h4>');
+                  $('#found-senate').html('<h4>Senate</h4>');
+ var c=0;
 
+var hf=false;
+var sf=false;
             $('#all-reps').velocity("fadeOut");  
             $('#repheader').velocity("fadeOut");
+
                var zipcode=$('#cdval').val();
                var confdist=confDist(zipcode);
                console.log(' '+confdist);
 
                if(confdist==1){
-
+          
                             var St=getState(zipcode);
                             var dist=getDistricts(zipcode);
-                            var c=0;
-                            for(c=0;c<dist.length;c++){
-                                console.log(St+'-'+dist[c]);
+                            var count=0;
+                            var fd=[];
+
+                               for(count=0;count<dist.length;count++){
+                                console.log(St+'-'+dist[count]);
+                                fd[count]=St+'-'+dist[count];
+                            
                             }
-                            $('#cdistrict').html(statenameabf(St));
+
+        Papa.parse("https://docs.google.com/spreadsheets/d/18l_7MPHoDdl7lRtp9uBtpNg_N6DyRrSrfvz-jY6Fr9g/export?format=csv&id=18l_7MPHoDdl7lRtp9uBtpNg_N6DyRrSrfvz-jY6Fr9g&gid=1512628366", {
+    download: true,
+    step: function(row) {
+
+
+         if(c>0){
+
+          var i=0;
+
+          if(row.data[0][4]==St&&row.data[0][3]=='senate'){sf=true;              console.log(row.data[0][0]+'A Senate Occurence');
+          }
+          if(row.data[0][3]=='house'){
+          for(i=0;i<fd.length;i++)
+          {
+
+            if(fd[i]==row.data[0][4]){
+                console.log(row.data[0][0]+'Occurence!!');
+               
+
+               $('#found-house').append(addacandidate(row.data[0][0],row.data[0][1],row.data[0][4],row.data[0][6],row.data[0][7],row.data[0][15],row.data[0][16],row.data[0][10],row.data[0][11],row.data[0][12]));
+
+                hf=true;
+                console.log(hf);
+            }
+          }
+          }
+      }
+       // if(c>0) $('#'+row.data[0][2]+'-'+row.data[0][3]+'-candidates').append(addacandidate(row.data[0][0],row.data[0][1],row.data[0][4],row.data[0][6],row.data[0][7],row.data[0][8],row].data[0][9],row.data[0][10],row.data[0][11],row.data[0][12],row.data[0][13],row.data[0][14]));
+
+        c=c+1;
+    },
+    complete: function() {
+        console.log("All done!");
+         $('#cdistrict').html(statenameabf(St));
+                            console.log(hf+','+sf);
+                            if(!hf){
+                                $('#found-house').css('display','none');
+                            }
+                            if(!sf)
+                            {
+                                $('#found-senate').css('display','none');
+                            }
                             $('#all-reps').velocity("fadeIn");
+
+    }
+});
+
+
+
+
+
+
+
+
+
+                           
+
                               
 
                         }
@@ -297,6 +353,15 @@ padding:8px;
                            }
 
         
+        }
+
+
+         function addacandidate(cname,img,district,incumbent,p,offact,noff,email,phone,website)
+        {
+
+            var r='<!--Candidate Starts --> <div style="padding: 6%;padding-top:70px;"> <img src="'+img+'" style="width: 200px;border: 1px solid gainsboro"> <h5 style="  margin-top: 3%;" class="party '+p+'">'+cname+' </h5>  <h6 style="  /* border-bottom: 2px solid; */ margin-bottom: 0px;">'+district+'</h6><p class="'+incumbent+'" style="   color: cornflowerblue;/* padding: 9px; */margin: 9px;"></p><p class="pledgebullet" style="text-align: left;max-width: 500px;margin-top: 13px"><big>Off Act Pledge : <span class="'+offact+'"></span> </big></p><p  class="pledgebullet" style="text-align: left;max-width: 500px"><big>No Fossil Fuel Money Pledge : <span class="'+noff+'"></span></big></p>  <p class="pledgebullet" style="text-align: left;max-width: 500px"><big>Email:<a href="mailto:'+email+'">'+email+'</a></big></p> <p class="pledgebullet" style="text-align: left;max-width: 500px"><big>Phone:<a href="tel:'+phone+'">'+phone+'</a></big></p> <p class="pledgebullet" style="text-align: left;max-width: 500px"><big>Website:<a href="'+website+'">'+website+'</a></big></p></div> <!--Candidate Finishes -->';
+
+            return r;
         }
     </script>
     <section class="p-0" id="livefeed" style="margin-bottom: 70px;">
