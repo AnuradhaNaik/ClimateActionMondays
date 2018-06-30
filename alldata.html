@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Gun Safety Voter Reference</title>
+    <title>Climate Mondays</title>
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom fonts for this template -->
@@ -39,7 +39,7 @@
   font-style: normal;
 }
 
-[class^="icon-"], [class*=" icon-"],[class^="response-"], [class*="response-"] {
+[class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -225,22 +225,6 @@ p.is.incumbent{
 p.is.not.incumbent{
     display: none;
 }
-/* TEMP */
-.candidates-subgroup.senate,.candidates-subgroup.house{
-    display: none;
-}
-#california-house-candidates,#nebraska-house-candidates,#arkansas-house-candidates,#texas-house-candidates{
-    display: block;
-}
-
-#alabama-house-candidates,#westvirginia-house-candidates,#virginia-house-candidates,#iowa-house-candidates,#mississippi-house-candidates,#oregon-house-candidates,#montana-house-candidates,#newjersey-house-candidates,#nevada-house-candidates
-{
-    display: block;
-}
-
-
-
-
 
 
 .response-yes{
@@ -249,10 +233,14 @@ p.is.not.incumbent{
 
 }
 .response-yes:before{
+    font-family: "Merriweather";
+    letter-spacing: 0.1em;
     content: "Yes";
 }
-.response-no{
+.response-no{font-family: "Merriweather";
         color: orangered;
+        
+        letter-spacing: 0.2em;
     font-weight: 800;
 
 }
@@ -290,6 +278,32 @@ content: "Incumbent";
 .is.not.incumbent:before{
 content: "";
 }
+
+div>img {
+    padding: 11px;
+  max-width: 200px;
+    border: 2.2px solid #dadada;
+    border-right: none;
+    border-radius: 1%;
+    border-left: none;
+}
+
+/* TEMP */
+.candidates-subgroup.senate,.candidates-subgroup.house{
+    display: none;
+}
+#california-house-candidates,#nebraska-house-candidates,#arkansas-house-candidates,#texas-house-candidates{
+    display: block;
+}
+
+#alabama-house-candidates,#westvirginia-house-candidates,#virginia-house-candidates,#iowa-house-candidates,#mississippi-house-candidates,#oregon-house-candidates,#montana-house-candidates,#newjersey-house-candidates,#nevada-house-candidates
+{
+    display: block;
+}
+
+
+
+
 
 
 
@@ -420,7 +434,7 @@ content: "";
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                                     <li class="nav-item"> <a class="nav-link js-scroll-trigger" href="#glossary-loc">Glossary - Click on this if you are here for the 1st time !</a> </li>
+                                    
 
                      <li class="nav-item"> <a class="nav-link js-scroll-trigger" href="#alabama">Alabama</a> </li>
                       <li class="nav-item"> <a class="nav-link js-scroll-trigger" href="#alaska">Alaska</a> </li>
@@ -523,39 +537,8 @@ td>span {
    
 
     <style type="text/css">
-    tr {
-        padding: 9px;
-    }
-
-    td {
-        padding: 11px;
-        border-bottom: 1px solid gainsboro;
-        /* min-width: 300px; */
-        max-width: 300px;
-        width: 12vw;
-        /* background: green; */
-    }
-
-    th {
-        border: none;
-        padding: 11px;
-        /* width: 240px; */
-        /* padding: 90px; */
-        border-right: 1px solid #fff;
-        background: #afbdf3;
-        background: #22ffeb00;
-        color: #381515;
-        text-align: center;
-        border-bottom: 1px solid gainsboro;
-    }
-
-    td {
-
-        border-right: 1px solid gainsboro;
-    }
-td:last-child {
-
-        border-right: none;
+    .office-type{
+        color:#99de3d;
     }
     .signed {
         font-size: large;
@@ -570,7 +553,7 @@ td:last-child {
         color: coral;
     }
     .section-heading>div{
-        margin-left: -11px;border:2px solid ;
+        margin-left: -11px;border:2px solid ;color:#99de3d;
     }
 
 
@@ -585,7 +568,29 @@ td:last-child {
 
 
 
+ <header class="masthead text-center text-white d-flex" style="background: #99de3d" class="mainheader">
 
+        <div class="container my-auto">
+      
+            
+<div class="row" id="intro">
+                <div class="col-lg-10 mx-auto">
+                    <h1 class="text-uppercase">
+            Climate Mondays
+            </h1>
+                    <hr>
+                </div>
+                <div class="col-lg-8 mx-auto">
+                    <p class="mb-5" style="color:rgba(0,0,0,0.8);padding: 5px;border-radius: 6px;font-weight: 700;font-size: x-large;">The Question is simple.<br> Will you vote for big oil OR Will you vote for us? </p>
+                  
+                  
+                </div>
+            </div>
+           <!--  <div  id="stats">
+               <h3>38% Candidates as of now have commited to vote for Federal Background checks</h3>
+            </div> -->
+        </div>
+    </header>
 
 
 
@@ -8673,9 +8678,9 @@ td:last-child {
     
     <footer style="min-height: 230px;
     padding: 30px;
-    background: #fbb026;
+    background: #99de3d;
     color: white;
-    overflow: hidden;"><center><h4>For all our angels who deserved to be here with us</h4>
+    overflow: hidden;"><center><h4>Outlaw Pollution</h4>
     <p style="padding-top: 80px;">
 © Anuradha Naik. All rights reserved.</p>
     </center></footer>
@@ -8713,7 +8718,7 @@ td:last-child {
           function addacandidate(cname,img,district,incumbent,p,offact,noff,email,phone,website)
         {
 
-            var r='<!--Candidate Starts --> <div style="padding: 6%;padding-top:70px;text-align:-webkit-center"> <img src="'+img+'" style="width: 200px;border: 1px solid gainsboro"> <h5 style="  margin-top: 3%;" class="party '+p+'">'+cname+' </h5>  <h6 style="  /* border-bottom: 2px solid; */ margin-bottom: 0px;">'+district+'</h6><p class="'+incumbent+'" style="   color: cornflowerblue;/* padding: 9px; */margin: 9px;"></p><p class="pledgebullet" style="text-align: left;max-width: 500px;margin-top: 13px"><big>Off Act Pledge : <span class="'+offact+'"></span> </big></p><p  class="pledgebullet" style="text-align: left;max-width: 500px"><big>No Fossil Fuel Money Pledge : <span class="'+noff+'"></span></big></p>  <p class="pledgebullet" style="text-align: left;max-width: 500px"><big>Email:<a href="mailto:'+email+'">'+email+'</a></big></p> <p class="pledgebullet" style="text-align: left;max-width: 500px"><big>Phone:<a href="tel:'+phone+'">'+phone+'</a></big></p> <p class="pledgebullet" style="text-align: left;max-width: 500px"><big>Website:<a href="'+website+'">'+website+'</a></big></p></div> <!--Candidate Finishes -->';
+            var r='<!--Candidate Starts --> <div style="padding: 6%;padding-top:70px;text-align:-webkit-center"> <img src="'+img+'" > <h5 style="  margin-top: 3%;" class="party '+p+'">'+cname+' </h5>  <h6 style="  /* border-bottom: 2px solid; */ margin-bottom: 0px;">'+district+'</h6><p class="'+incumbent+'" style="   color: cornflowerblue;/* padding: 9px; */margin: 9px;"></p><p class="pledgebullet" style="text-align: left;max-width: 500px;margin-top: 13px"><big>Off Act Pledge : <span class="'+offact+'"></span> </big></p><p  class="pledgebullet" style="text-align: left;max-width: 500px"><big>No Fossil Fuel Money Pledge : <span class="'+noff+'"></span></big></p>  <p class="pledgebullet" style="text-align: left;max-width: 500px"><big>Email:<a href="mailto:'+email+'">'+email+'</a></big></p> <p class="pledgebullet" style="text-align: left;max-width: 500px"><big>Phone:<a href="tel:'+phone+'">'+phone+'</a></big></p> <p class="pledgebullet" style="text-align: left;max-width: 500px"><big>Website:<a href="'+website+'">'+website+'</a></big></p></div> <!--Candidate Finishes -->';
 
             return r;
         }

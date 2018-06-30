@@ -60,7 +60,7 @@
                         <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="alldata.ht">All Data</a>
+                        <a class="nav-link js-scroll-trigger" href="alldata.html">All Data</a>
                     </li>
                 </ul>
             </div>
@@ -208,6 +208,15 @@ content: "Incumbent";
 }
 .is.not.incumbent:before{
 content: "";
+}
+
+div>img {
+    padding: 11px;
+  max-width: 200px;
+    border: 2.2px solid #dadada;
+    border-right: none;
+    border-radius: 1%;
+    border-left: none;
 }
  @media only screen and (max-width: 600px) {
     .table_ ,table {
@@ -359,7 +368,7 @@ var sf=false;
          function addacandidate(cname,img,district,incumbent,p,offact,noff,email,phone,website)
         {
 
-            var r='<!--Candidate Starts --> <div style="padding: 6%;padding-top:70px;"> <img src="'+img+'" style="width: 200px;border: 1px solid gainsboro"> <h5 style="  margin-top: 3%;" class="party '+p+'">'+cname+' </h5>  <h6 style="  /* border-bottom: 2px solid; */ margin-bottom: 0px;">'+district+'</h6><p class="'+incumbent+'" style="   color: cornflowerblue;/* padding: 9px; */margin: 9px;"></p><p class="pledgebullet" style="text-align: left;max-width: 500px;margin-top: 13px"><big>Off Act Pledge : <span class="'+offact+'"></span> </big></p><p  class="pledgebullet" style="text-align: left;max-width: 500px"><big>No Fossil Fuel Money Pledge : <span class="'+noff+'"></span></big></p>  <p class="pledgebullet" style="text-align: left;max-width: 500px"><big>Email:<a href="mailto:'+email+'">'+email+'</a></big></p> <p class="pledgebullet" style="text-align: left;max-width: 500px"><big>Phone:<a href="tel:'+phone+'">'+phone+'</a></big></p> <p class="pledgebullet" style="text-align: left;max-width: 500px"><big>Website:<a href="'+website+'">'+website+'</a></big></p></div> <!--Candidate Finishes -->';
+            var r='<!--Candidate Starts --> <div style="padding: 6%;padding-top:70px;"> <img src="'+img+'"> <h5 style="  margin-top: 3%;" class="party '+p+'">'+cname+' </h5>  <h6 style="  /* border-bottom: 2px solid; */ margin-bottom: 0px;">'+district+'</h6><p class="'+incumbent+'" style="   color: cornflowerblue;/* padding: 9px; */margin: 9px;"></p><p class="pledgebullet" style="text-align: left;max-width: 500px;margin-top: 13px"><big>Off Act Pledge : <span class="'+offact+'"></span> </big></p><p  class="pledgebullet" style="text-align: left;max-width: 500px"><big>No Fossil Fuel Money Pledge : <span class="'+noff+'"></span></big></p>  <p class="pledgebullet" style="text-align: left;max-width: 500px"><big>Email:<a href="mailto:'+email+'">'+email+'</a></big></p> <p class="pledgebullet" style="text-align: left;max-width: 500px"><big>Phone:<a href="tel:'+phone+'">'+phone+'</a></big></p> <p class="pledgebullet" style="text-align: left;max-width: 500px"><big>Website:<a href="'+website+'">'+website+'</a></big></p></div> <!--Candidate Finishes -->';
 
             return r;
         }
