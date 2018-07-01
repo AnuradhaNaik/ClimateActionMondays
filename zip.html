@@ -25,6 +25,10 @@
     {
         cursor: pointer;
     }
+
+    #mainNav .navbar-nav>li.nav-item>a.nav-link, #mainNav .navbar-nav>li.nav-item>a.nav-link:focus,#mainNav .navbar-nav>li.nav-item>a.nav-link:hover{
+        color:#202020;;
+    }
     @media only screen and (max-width: 600px) {
     html {
         overflow: hidden;
@@ -36,38 +40,45 @@
 
 <body id="page-top">
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <nav class="navbar navbar-light fixed-top" style="background: white" id="mainNav">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">Climate Mondays</a>
+            <a class="navbar-brand js-scroll-trigger" style="color:#8bc34a" href="#page-top">Climate Mondays</a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#campaign">Campaign</a>
+                <ul class="navbar-nav ml-auto" >
+                <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#upcoming">Upcoming Event</a>
+                    </li>
+                      <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#livefeed">Social Media Booth</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#livefeed">What's Happening</a>
+                        <a class="nav-link js-scroll-trigger" href="#campaign">Join us</a>
+                    </li>
+                 
+                  
+                 
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="alldata.html">Climate Cabaret</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="alldata.html">Adopt A District</a>
                     </li>
                      <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#pledges">Pledges</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#socialmedia">Social Media</a>
+                        <a class="nav-link js-scroll-trigger" href="alldata.html">All Data</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="alldata.html">All Data</a>
-                    </li>
+                   
                 </ul>
             </div>
         </div>
     </nav>
-    <header class="masthead text-center text-white d-flex">
-        <div class="container my-auto">
+    <header class="masthead text-center text-white d-flex" style="background: transparent;">
+       <!--  <div class="container my-auto">
             <div class="row">
                 <div class="col-lg-10 mx-auto">
                     <h1 class="text-uppercase">
@@ -85,18 +96,253 @@
             </div>
             <div class="row" id="stats">
             </div>
-        </div>
+        </div> -->
     </header>
    
-    <section id="campaign">
+
+
+
+
+
+
+   
+    <section class="p-0" id="upcoming" style="margin-top: 70px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-heading">Upcoming </h2>
+                    <hr class="my-4">
+<br>
+<style type="text/css">
+#share-list
+{
+    text-align: -webkit-center;padding: 0px;margin-left: -56px;
+}
+
+    #share-list li{
+display: inline-block;
+margin-left:50px;font-size: small;padding:10px;border-radius: 8px;border:1px solid #68b945;background:#68b945;color:white;min-width: 100px;cursor: pointer;
+    }
+    #share-list li>a{
+        color: white;
+    }
+</style>
+<section class="next-event" style="margin-top: 8px;padding: 18px;padding-bottom: 90px">
+    
+    <p>
+       <big>
+     Next event :     <span id="demo"></span></big>
+    </p>
+<br><br><br>
+    <p>Share Event with friends :
+    <br>
+<ul style="list-style: none" id="share-list">
+    <li><a  class="twitter-share-button"
+  href="https://twitter.com/home?status=Come%20to%20%23ClimateMondays%20and%20be%20a%20part%20of%20making%20a%20green%20economy%20in%20the%20US%20%20%23MondayMotivation%20%23OffAct%20%23NoFossilFuels" target="_blank">Tweet</a></li>
+
+    <li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?kid_directed_site=0&sdk=joey&u=https%3A%2F%2Fwww.facebook.com%2FClimateMondays%2F&display=popup&ref=plugin&src=share_button">Share on FB</a></li>
+
+    <li><a href="mailto:?&cc=climatemondays@gmail.com&subject=Climate Mondays&body=Come%20to%20%23ClimateMondays%20and%20be%20a%20part%20of%20making%20a%20green%20economy%20in%20the%20US%20%23OffAct%20%23NoFossilFuels">Email</a></li>
+</ul>
+    </p>
+
+
+<script>
+
+
+// Set the date we're counting down to
+var countDownDate = new Date("July 02, 2018 06:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+    // Get todays date and time
+    var now = new Date().getTime();
+    
+    // Find the distance between now an the count down date
+    var distance = countDownDate - now;
+    
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    // Output the result in an element with id="demo"
+    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+    
+    // If the count down is over, write some text 
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+    }
+}, 1000);
+</script>
+
+
+
+</section>
+
+
+                </div>
+            </div>
+        </div>
+        <!--
+        <div class="container-fluid p-0">
+            <div class="row no-gutters popup-gallery">
+                <div class="col-lg-4 col-sm-6">
+                    <a class="portfolio-box" href="img/portfolio/fullsize/1.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                 
+                </div>
+              </div>
+            </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a class="portfolio-box" href="img/portfolio/fullsize/2.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/2.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  
+                </div>
+              </div>
+            </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a class="portfolio-box" href="img/portfolio/fullsize/3.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/3.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  
+                </div>
+              </div>
+            </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a class="portfolio-box" href="img/portfolio/fullsize/4.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/4.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                 
+                </div>
+              </div>
+            </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a class="portfolio-box" href="img/portfolio/fullsize/5.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/5.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                 
+                </div>
+              </div>
+            </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a class="portfolio-box" href="img/portfolio/fullsize/6.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/6.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                 
+                </div>
+              </div>
+            </a>
+                </div>
+            </div>
+        </div> -->
+    </section>
+
+
+
+
+
+
+<section class="p-0" id="livefeed" style="margin-top: 70px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-heading">Social Media Booth</h2>
+                    <hr class="my-4">
+
+
+<!-- InstaWidget -->
+<a href="https://instawidget.net/v/user/climatemondays" id="link-32550491b01fead5da2ad42bb37fd1954e3a1fbff1b543895eb599a79a3806fa">@climatemondays</a>
+<script src="https://instawidget.net/js/instawidget.js?u=32550491b01fead5da2ad42bb37fd1954e3a1fbff1b543895eb599a79a3806fa&width=60vw"></script>
+
+
+
+
+
+</div>
+</div>
+</div>
+</section>
+
+ <section id="socialmedia" >
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-heading">Find us on Social Media</h2>
+                    <hr class="my-4" style="border-color: white">
+                </div>
+            </div>
+            <style type="text/css">
+            .quart>.col-lg-4,
+            .pad>.col-lg-4 {
+                margin-bottom: 30px;
+                margin-top: 30px;
+            }
+
+            @media (min-width: 992px) {
+                .quart>.col-lg-4 {
+                    max-width: 25%;
+                }
+            }
+            </style>
+            <div class="row quart" style="margin-bottom: 100px;margin-top:30px">
+                <div class="col-lg-4 ml-auto text-center">
+                    <a  href="https://www.facebook.com/ClimateMondays/" target="_blank"><i class="fa fa-facebook fa-3x mb-3 sr-contact"></i>
+                    <p>Like us on Facebook</p>
+</a>                </div>
+             
+                <div class="col-lg-4 mr-auto text-center">
+                    <i class="fa fa-instagram fa-3x mb-3 sr-contact"></i>
+                    <br>
+                    <p>
+                        Follow us on Instagram
+                    </p>
+                </div>
+                <br>
+               
+            </div>
+    </section>
+
+    <style type="text/css">
+    #vol-sign-up {
+        display: inline-block;
+    }
+
+    #vol-sign-up input,
+    #vol-sign-up textarea {
+
+        float: right;
+    }
+
+    </style>
+
+
+ <section id="campaign">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Get Started</h2>
+                    <h2 class="section-heading">Join the movement</h2>
                     <hr class="my-4">
                     <br>
                     <p style="    font-size: 14px;
-    "><big>We are calling on our politicians to sign the pledges to <b><b>Not take fossil fuel money</b></b> and <b><b>Consponsor the Off Fossil Fuels Act</b></b> . <br>Enter your zipcode to find out where your elected officials stand .Find out more about the pledges <a href="#pledges"><strong>here</strong></a></big> </p>
+    "><big>We are calling on our politicians to sign the <b><b>#NoFossilFuelMoney</b></b> Pledge and the <b><b>#OffAct</b></b>Pledge . <br>Enter your zipcode to find out where your elected officials stand .Find out more about the pledges <a href="#pledges"><strong>here</strong></a></big> </p>
                     <br>
                     <center>
                         <div>
@@ -373,98 +619,10 @@ var sf=false;
             return r;
         }
     </script>
-    <section class="p-0" id="livefeed" style="margin-bottom: 70px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <h2 class="section-heading">What's Happening</h2>
-                    <hr class="my-4">
-<br>
 
 
-<!-- InstaWidget -->
-<a href="https://instawidget.net/v/user/climatemondays" id="link-32550491b01fead5da2ad42bb37fd1954e3a1fbff1b543895eb599a79a3806fa">@climatemondays</a>
-<script src="https://instawidget.net/js/instawidget.js?u=32550491b01fead5da2ad42bb37fd1954e3a1fbff1b543895eb599a79a3806fa&width=800px"></script>
-                </div>
-            </div>
-        </div>
-        <!--
-        <div class="container-fluid p-0">
-            <div class="row no-gutters popup-gallery">
-                <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="img/portfolio/fullsize/1.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                 
-                </div>
-              </div>
-            </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="img/portfolio/fullsize/2.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/2.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  
-                </div>
-              </div>
-            </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="img/portfolio/fullsize/3.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/3.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  
-                </div>
-              </div>
-            </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="img/portfolio/fullsize/4.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/4.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                 
-                </div>
-              </div>
-            </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="img/portfolio/fullsize/5.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/5.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                 
-                </div>
-              </div>
-            </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="img/portfolio/fullsize/6.jpg">
-              <img class="img-fluid" src="img/portfolio/thumbnails/6.jpg" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                 
-                </div>
-              </div>
-            </a>
-                </div>
-            </div>
-        </div> -->
-    </section>
-    <style type="text/css">
-    #vol-sign-up {
-        display: inline-block;
-    }
 
-    #vol-sign-up input,
-    #vol-sign-up textarea {
 
-        float: right;
-    }
-    </style>
     <section id="signup" class="bg-primary" style="color: white;display: none">
         <div class="container">
             <div class="row">
@@ -522,6 +680,10 @@ var sf=false;
             </div>
         </div>
     </section>
+
+
+
+
     <section id="pledges">
         <div class="container">
             <div class="row">
@@ -589,56 +751,38 @@ var sf=false;
       </div>
  -->
     </section>
-    <section id="socialmedia" class="bg-primary" style="color: white">
+
+
+
+    <section id="climatecabaret">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <h2 class="section-heading">Our Social Media</h2>
-                    <hr class="my-4" style="border-color: white">
-                </div>
-            </div>
-            <style type="text/css">
-            .quart>.col-lg-4,
-            .pad>.col-lg-4 {
-                margin-bottom: 30px;
-                margin-top: 30px;
-            }
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Climate Cabaret</h2>
+                    <hr class="my-4">
+                    <br>
+                    <p>We promote up and coming new artists to showcase their talent at our events .Here are just some of the amazing talents that have performed at our events   </p>
+                    </div>
+                    </div>
+                    </div>
+                    </section>
 
-            @media (min-width: 992px) {
-                .quart>.col-lg-4 {
-                    max-width: 25%;
-                }
-            }
-            </style>
-            <div class="row quart" style="margin-bottom: 100px;margin-top:30px">
-                <div class="col-lg-4 ml-auto text-center">
-                    <i class="fa fa-facebook fa-3x mb-3 sr-contact"></i>
-                    <p><a style="color: white;text-decoration: none;" href="https://www.facebook.com/ClimateMondays/" target="_blank">Like us on Facebook</a></p>
-                </div>
-                <div class="col-lg-4 mr-auto text-center">
-                    <i class="fa fa-twitter fa-3x mb-3 sr-contact"></i>
+
+
+<section id="adoptadistrict">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Adopt A District</h2>
+                    <hr class="my-4">
                     <br>
-                    <p>
-                        Follow us on Twiiter
-                    </p>
-                </div>
-                <div class="col-lg-4 mr-auto text-center">
-                    <i class="fa fa-instagram fa-3x mb-3 sr-contact"></i>
-                    <br>
-                    <p>
-                        Follow us on Instagram
-                    </p>
-                </div>
-                <br>
-                <div class="col-lg-4 mr-auto text-center">
-                    <i class="fa fa-youtube-square fa-3x mb-3 sr-contact"></i>
-                    <br>
-                    <p>
-                        Subscribe to our Youtube Channel
-                    </p>
-                </div>
-            </div>
-    </section>
+                    <p>A call to action for climate activists around the country to adopt their congressional district and focus on their congressional candidate to take the NoFossilFuelMoney and OffAct Pledges.
+                       </p>
+                    </div>
+                    </div>
+                    </div>
+                    </section>
+   
     <section id="contact">
         <div class="container">
             <div class="row">
