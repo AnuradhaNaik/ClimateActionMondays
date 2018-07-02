@@ -1,6 +1,6 @@
 # [Gun Safety Voter Reference](http://bit.ly/GunSafetyVoterReference)
 
-A single issue,non partisan all in one voter reference to see who has taken how much from NRA,Who'll vote for Background checks and more!
+A Weekly Gathering to advocate for climate leaders and environmentally just legislation!
 
 ## Preview
 
