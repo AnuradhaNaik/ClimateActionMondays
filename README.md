@@ -1,12 +1,12 @@
-# [Gun Safety Voter Reference](http://bit.ly/GunSafetyVoterReference)
+# [Climate Mondays](https://anuradhanaik.github.io/CM/)
 
 A Weekly Gathering to advocate for climate leaders and environmentally just legislation!
 
 ## Preview
 
-[![Creative Preview](https://image.ibb.co/e6ss7y/2018_06_13_12_55_gunsafetyvoterref_000webhostapp_com.png)](http://bit.ly/GunSafetyVoterReference)
+[![Creative Preview](https://image.ibb.co/figMNJ/2018_07_02_17_40_anuradhanaik_github_io.png)](https://anuradhanaik.github.io/CM/)
 
-**[View Live Preview](http://bit.ly/GunSafetyVoterReference)
+**[View Live Preview](https://anuradhanaik.github.io/CM/)
 
 
 ## Status
@@ -14,13 +14,12 @@ A Weekly Gathering to advocate for climate leaders and environmentally just legi
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/BlackrockDigital/startbootstrap-creative/master/LICENSE)
 
 
-## References
+## Social Media
 
-The following are some of the key websites used to put the information together:
-* [Ballotpedia](https://ballotpedia.org)
-* [Votesmart](https://votesmart.org/)
-* [OpenSecrets](https://www.opensecrets.org/)
-* [Politico](https://www.politico.com/election-results/2018/)
+Links:
+* [Instagram](https://www.instagram.com/climatemondays/)
+* [Facebook](https://www.facebook.com/ClimateMondays/)
+
 
 ## About
 
