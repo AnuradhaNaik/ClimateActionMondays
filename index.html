@@ -35,7 +35,60 @@
        
     }
 }
+
+
+.cmform p{
+    color: #63b306;
+    font-size: x-large;display: none;
+}
+
+.cmform p big:before{
+    content: "All done!!";
+}
+.cmform form label{
+
+}
+.cmform form input,.cmform form textarea{
+padding: 6px;
+    margin-bottom: 10px;
+    margin-top: 24px;
+    border: 3px solid #8fc55069;
+    background: white;
+    outline: none;
+
+}
+.cmform form input[type="submit"] {
+    padding: 9px;
+    color: white;
+    border-color: transparent;
+    background: #8bc34b;
+    border-radius: 4px;
+    min-width: 100px;
+}
+.cmform >.doneform{display: none}
+.doneform + p{
+    display: block;
+}
+.next-event>img{
+    margin-left: -1%;
+    width:110%;
+    max-width: 650px;
+}
+@media (min-width: 992px ){
+header.masthead {
+    height: 100vh;
+    min-height: 900px;}
+}
+@media (min-width: 1300px ){
+header.masthead {
+    height: 100vh;
+    min-height: 700px;}
+}
+
+
     </style>
+
+
 </head>
 
 <body id="page-top">
@@ -119,6 +172,7 @@
         border-radius: 50%; */
        
     }
+
 </style>
 
         <div class="container my-auto"><center>
@@ -130,7 +184,7 @@
 
                  <h1 class="text-uppercase" style="letter-spacing: 0.03em;
     text-shadow: 0 0 10px #80a71e;
-    font-size: 9vh;
+    font-size: 9vh;margin-top: 80px;
     font-weight: 600;">
              Elect Climate Leaders
             </h1> <hr style="min-width: 13%">
@@ -212,14 +266,24 @@
 display: inline-block;
 margin-left:50px;font-size: small;padding:10px;border-radius: 8px;border:1px solid #68b945;background:#68b945;color:white;min-width: 100px;cursor: pointer;
     }
+
     #share-list li>a{
         color: white;
+    }
+    @media only screen and (max-width:499px)
+    {
+#share-list li {
+    display: block;
+    max-width: 120px;
+    margin-top: 32px;
+    margin-bottom: 20px;
+}
     }
 </style>
 <section class="next-event" style="margin-top: 8px;padding: 18px;padding-bottom: 90px">
     
 
-    <img src="img/upcoming.png" style="width:80%;margin-left: 6%;"><br><br>
+    <img src="img/upcoming.png" ><br><br>
     <p><b>
        <big>
      Next event :     <span id="demo"></span></big></b>
@@ -367,25 +431,13 @@ var x = setInterval(function() {
 <p style="margin:44px"><strong>Take a selfie and post it with the hastag <a href="https://www.instagram.com/explore/tags/climatemondays/">#ClimateMondays</a> to be featured !!</strong></p>
 
 <!-- InstaWidget -->
-<!-- <a href="https://instawidget.net/v/user/climatemondays" id="link-32550491b01fead5da2ad42bb37fd1954e3a1fbff1b543895eb599a79a3806fa">@climatemondays</a>
+<a href="https://instawidget.net/v/user/climatemondays" id="link-32550491b01fead5da2ad42bb37fd1954e3a1fbff1b543895eb599a79a3806fa">@climatemondays</a>
 
 
 <script src="https://instawidget.net/js/instawidget.js?u=32550491b01fead5da2ad42bb37fd1954e3a1fbff1b543895eb599a79a3806fa&width=120%"></script>
- -->
 
-<script src="js/instafeed.min.js"></script>
-<script type="text/javascript">
-    
-    var feed = new Instafeed({
-  clientId: '218bc042177d4cc0a781b3d42aa654b8',
-   accessToken: '4543388531.218bc04.257ec731183541d78f12f237da3e6342',
-  get: 'tagged',
-  tagName: 'newyears',
-  resolution: 'low_resolution'
-});
-feed.run();
-</script>
-<div id="instafeed"></div>
+
+
 
 </div>
 </div>
@@ -901,7 +953,17 @@ var sf=false;
                     <h2 class="section-heading">Adopt A District</h2>
                     <hr class="my-4">
                     <br>
-                    <p>A call to action for climate activists around the country to adopt their congressional district and focus on their congressional candidate to take the NoFossilFuelMoney and OffAct Pledges.If you would like to join on the action and lobby your congressperson for a pollution free district <a href="">Sign Up Now!</a>
+                    <p>A call to action for climate activists around the country to adopt their congressional district and focus on their congressional candidate to take the NoFossilFuelMoney and OffAct Pledges.If you would like to join on the action and lobby your congressperson for a pollution free district <br>
+                    <div class="cmform"><big style="color: #8bc34a">Sign Up Now!</big>
+   <form id="aad-m">
+ 
+    <input name="FirstName" type="text" placeholder="First Name" required><br><br>
+     <input name="LastName" type="text" placeholder="Last Name" required><br><br>
+                    <input name="Email" type="email" placeholder="Email" required><br><br>
+                    <input name="Zipcode"  pattern="[0-9]{5}"  type="text" placeholder="Zipcode" required><br><br>
+                    <input name="Intrested" type="text" placeholder="Interested in District(optional)" ><br><br>
+                    <input type="submit" name="Sign Up" value="Sign Up" id="submit-form3">
+                </form> <p><big></big></p></div>
 
                        </p>
                     </div>
@@ -909,7 +971,7 @@ var sf=false;
                     </div>
                     </section>
 
-                 <!--    <section id="Sign Up">
+                    <section id="Sign Up">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
@@ -921,15 +983,57 @@ var sf=false;
 
             <div class="row" style="padding-top: 39px">
             <div class="col-lg-8 mx-auto text-center">
-                <form>
-                    <label>Email</label><input type="email" name=""><br>
-                    <label>Zip code</label><input type="text" name=""><br>
-                    <input type="submit" name="Join" value="Join">
-                </form></div>
+                <div class="cmform">
+                <form id="signup-m">
+                   <input placeholder="Email" name="Email" type="email" required><br>
+                   <input placeholder=" Zipcode"  pattern="[0-9]{5}"  name="Zip" type="text" required><br>
+                    <input type="submit" name="Join" value="Get Updates" id="submit-form">
+                </form>
+                <p><big></big></p>
+                </div>
+
+
+                </div>
             </div>
         </div>
-        </section> -->
+        </section>
    
+
+
+   <section id="Feedback">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-heading">Feedback</h2>
+                    <hr class="my-4">
+                    <h6>Let us know your thoughts</h6>
+                </div>
+            </div>
+
+            <div class="row" style="padding-top: 39px">
+            <div class="col-lg-8 mx-auto text-center">
+            <div class="cmform">
+                <form id="feedback-m">
+                  <input name="Email" type="email" placeholder="Email" required><br>
+                   <textarea name="Feedback" type="text" placeholder="Comments" required></textarea><br>
+                    <input type="submit" name="Join" value="Give Feedback" id="submit-form2">
+                </form> <p><big></big></p></div>
+
+
+
+                </div>
+            </div>
+        </div>
+        </section>
+
+
+
+
+
+
+
+
+
     <section id="contact">
         <div class="container">
             <div class="row">
@@ -1059,6 +1163,69 @@ We're building an army of young people to make climate change an urgent priority
             $(this).text(Math.ceil(now));
         }
     });
+});
+</script>
+
+<script type="text/javascript">
+    
+
+    /**
+ * jQuery serializeObject
+ * @copyright 2014, macek <paulmacek@gmail.com>
+ * @link https://github.com/macek/jquery-serialize-object
+ * @license BSD
+ * @version 2.5.0
+ */
+!function(e,i){if("function"==typeof define&&define.amd)define(["exports","jquery"],function(e,r){return i(e,r)});else if("undefined"!=typeof exports){var r=require("jquery");i(exports,r)}else i(e,e.jQuery||e.Zepto||e.ender||e.$)}(this,function(e,i){function r(e,r){function n(e,i,r){return e[i]=r,e}function a(e,i){for(var r,a=e.match(t.key);void 0!==(r=a.pop());)if(t.push.test(r)){var u=s(e.replace(/\[\]$/,""));i=n([],u,i)}else t.fixed.test(r)?i=n([],r,i):t.named.test(r)&&(i=n({},r,i));return i}function s(e){return void 0===h[e]&&(h[e]=0),h[e]++}function u(e){switch(i('[name="'+e.name+'"]',r).attr("type")){case"checkbox":return"on"===e.value?!0:e.value;default:return e.value}}function f(i){if(!t.validate.test(i.name))return this;var r=a(i.name,u(i));return l=e.extend(!0,l,r),this}function d(i){if(!e.isArray(i))throw new Error("formSerializer.addPairs expects an Array");for(var r=0,t=i.length;t>r;r++)this.addPair(i[r]);return this}function o(){return l}function c(){return JSON.stringify(o())}var l={},h={};this.addPair=f,this.addPairs=d,this.serialize=o,this.serializeJSON=c}var t={validate:/^[a-z_][a-z0-9_]*(?:\[(?:\d*|[a-z0-9_]+)\])*$/i,key:/[a-z0-9_]+|(?=\[\])/gi,push:/^$/,fixed:/^\d+$/,named:/^[a-z0-9_]+$/i};return r.patterns=t,r.serializeObject=function(){return new r(i,this).addPairs(this.serializeArray()).serialize()},r.serializeJSON=function(){return new r(i,this).addPairs(this.serializeArray()).serializeJSON()},"undefined"!=typeof i.fn&&(i.fn.serializeObject=r.serializeObject,i.fn.serializeJSON=r.serializeJSON),e.FormSerializer=r,r});
+
+</script>
+<script type="text/javascript">
+    
+    var $form = $('form#signup-m'),
+    url = 'https://script.google.com/macros/s/AKfycbwgVyxM8p46F9B3e850Db_JxlRROeQnNreSzsVGe6fT4eTD38s/exec'
+      var $f2=$('form#feedback-m'),
+      url_ = 'https://script.google.com/macros/s/AKfycbwncn-GqFCQEEFdSIGB3iy97GsveaWNU0xOC4alOITBL2uNAQq4/exec';
+
+         var $aad=$('form#aad-m'),
+         aurl='https://script.google.com/macros/s/AKfycbza82mSMBLl26sWw5nPvrNFMusMAvshSkQ5fkyzIgOj3sJONK4/exec';
+
+$('#submit-form').on('click', function(e) {
+  e.preventDefault();
+  var jqxhr = $.ajax({
+    url: url,
+    method: "GET",
+    dataType: "json",
+    data: $form.serializeObject(),
+    success: function (arg) { 
+            $form.addClass('doneform');
+    }
+
+  });
+});
+$('#submit-form2').on('click', function(e) {
+  e.preventDefault();
+  var jqxhr = $.ajax({
+    url: url_,
+    method: "GET",
+    dataType: "json",
+    data: $f2.serializeObject(),
+     success: function (arg) { 
+            $f2.addClass('doneform');
+    }
+  });
+});
+
+$('#submit-form3').on('click', function(e) {
+  e.preventDefault();
+  var jqxhr = $.ajax({
+    url: aurl,
+    method: "GET",
+    dataType: "json",
+    data: $aad.serializeObject(),
+     success: function (arg) { 
+            $aad.addClass('doneform');
+    }
+  });
 });
 </script>
 </body>
