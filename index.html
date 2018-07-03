@@ -69,6 +69,9 @@ padding: 6px;
 .doneform + p{
     display: block;
 }
+.cmform form input.err, .cmform form textarea.err {
+    border-color: coral;
+}
 .next-event>img{
     margin-left: -1%;
     width:110%;
@@ -431,12 +434,13 @@ var x = setInterval(function() {
 <p style="margin:44px"><strong>Take a selfie and post it with the hastag <a href="https://www.instagram.com/explore/tags/climatemondays/">#ClimateMondays</a> to be featured !!</strong></p>
 
 <!-- InstaWidget -->
-<a href="https://instawidget.net/v/user/climatemondays" id="link-32550491b01fead5da2ad42bb37fd1954e3a1fbff1b543895eb599a79a3806fa">@climatemondays</a>
+<!-- <a href="https://instawidget.net/v/user/climatemondays" id="link-32550491b01fead5da2ad42bb37fd1954e3a1fbff1b543895eb599a79a3806fa">@climatemondays</a>
 
 
 <script src="https://instawidget.net/js/instawidget.js?u=32550491b01fead5da2ad42bb37fd1954e3a1fbff1b543895eb599a79a3806fa&width=120%"></script>
+ -->
 
-
+<!-- LightWidget WIDGET --><script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/dba5341dae975fb5a9ee81e48776ca14.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:96%;border:0;overflow:hidden;"></iframe>
 
 
 </div>
@@ -985,8 +989,8 @@ var sf=false;
             <div class="col-lg-8 mx-auto text-center">
                 <div class="cmform">
                 <form id="signup-m">
-                   <input placeholder="Email" name="Email" type="email" required><br>
-                   <input placeholder=" Zipcode"  pattern="[0-9]{5}"  name="Zip" type="text" required><br>
+                   <input placeholder="Email"  id="signup-m-email" name="Email" type="email" required><br>
+                   <input placeholder=" Zipcode" id="signup-m-zip"  pattern="[0-9]{5}"  name="Zip" type="text" required><br>
                     <input type="submit" name="Join" value="Get Updates" id="submit-form">
                 </form>
                 <p><big></big></p>
@@ -1168,6 +1172,47 @@ We're building an army of young people to make climate change an urgent priority
 
 <script type="text/javascript">
     
+
+
+function validatesignupform()
+{
+ var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+var e,z;
+ if($('#signup-m-email').val()!=''&&$('#signup-m-email').val()!='')
+  {  
+
+
+
+if(!$('#signup-m-email').val().match(re)) { $('#signup-m-email').addClass('err');}
+else {
+
+ $('#signup-m-email').removeClass('err');
+ e=true;
+
+
+}
+
+if(!confDist($('#signup-m-zip').val())==1) {
+ $('#signup-m-zip').addClass('err');
+   
+ }
+ else{
+     $('#signup-m-zip').removeClass('err');
+     z=true;
+  
+ }
+if(e&&z) return true;
+else return false;
+
+
+
+  }
+
+else return false;
+
+
+}
+
 
     /**
  * jQuery serializeObject
