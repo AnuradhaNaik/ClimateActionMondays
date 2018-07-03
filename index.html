@@ -367,13 +367,25 @@ var x = setInterval(function() {
 <p style="margin:44px"><strong>Take a selfie and post it with the hastag <a href="https://www.instagram.com/explore/tags/climatemondays/">#ClimateMondays</a> to be featured !!</strong></p>
 
 <!-- InstaWidget -->
-<a href="https://instawidget.net/v/user/climatemondays" id="link-32550491b01fead5da2ad42bb37fd1954e3a1fbff1b543895eb599a79a3806fa">@climatemondays</a>
+<!-- <a href="https://instawidget.net/v/user/climatemondays" id="link-32550491b01fead5da2ad42bb37fd1954e3a1fbff1b543895eb599a79a3806fa">@climatemondays</a>
 
 
-<script src="https://instawidget.net/js/instawidget.js?u=32550491b01fead5da2ad42bb37fd1954e3a1fbff1b543895eb599a79a3806fa&width=60vw"></script>
+<script src="https://instawidget.net/js/instawidget.js?u=32550491b01fead5da2ad42bb37fd1954e3a1fbff1b543895eb599a79a3806fa&width=120%"></script>
+ -->
 
-
-
+<script src="js/instafeed.min.js"></script>
+<script type="text/javascript">
+    
+    var feed = new Instafeed({
+  clientId: '218bc042177d4cc0a781b3d42aa654b8',
+   accessToken: '4543388531.218bc04.257ec731183541d78f12f237da3e6342',
+  get: 'tagged',
+  tagName: 'newyears',
+  resolution: 'low_resolution'
+});
+feed.run();
+</script>
+<div id="instafeed"></div>
 
 </div>
 </div>
