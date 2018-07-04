@@ -66,6 +66,7 @@ padding: 6px;
     min-width: 100px;
 }
 .cmform >.doneform{display: none}
+.cmform >#feedback-m.doneform{display:block;}
 .doneform + p{
     display: block;
 }
@@ -1019,10 +1020,10 @@ var sf=false;
             <div class="col-lg-8 mx-auto text-center">
             <div class="cmform">
                 <form id="feedback-m">
-                  <input name="Email" type="email" id="feedback-m-email"  placeholder="Email" required><br>
-                   <textarea name="Feedback" id="feedback-m-comments" type="text" placeholder="Comments" required></textarea><br>
+                  <input name="Email" type="email" id="feedback-m-email"  placeholder="Email" onkeydown="document.getElementById('feedback-m').classList=''" required><br>
+                   <textarea name="Feedback" id="feedback-m-comments" type="text" placeholder="Comments" required ></textarea><br>
                     <input type="submit" name="Join" value="Give Feedback" id="submit-form2">
-                </form> <p><big></big></p></div>
+                </form> <p id="successb"><big></big></p></div>
 
 
 
