@@ -961,12 +961,13 @@ var sf=false;
                     <div class="cmform"><big style="color: #8bc34a">Sign Up Now!</big>
    <form id="aad-m">
  
-    <input name="FirstName" type="text" placeholder="First Name" required><br><br>
-     <input name="LastName" type="text" placeholder="Last Name" required><br><br>
-                    <input name="Email" type="email" placeholder="Email" required><br><br>
-                    <input name="Zipcode"  pattern="[0-9]{5}"  type="text" placeholder="Zipcode" required><br><br>
-                    <input name="Intrested" type="text" placeholder="Interested in District(optional)" ><br><br>
-                    <input type="submit" name="Sign Up" value="Sign Up" id="submit-form3">
+    <input name="FirstName" id="aad-m-fn" type="text" placeholder="First Name" required><br><br>
+     <input name="LastName" id="aad-m-ln" type="text" placeholder="Last Name" required><br><br>
+                    <input id="aad-m-email" name="Email" type="email" placeholder="Email" required><br><br>
+                    <input id="aad-m-tel" name="Telephone" type="tel" placeholder="Phone No." required><br><br>
+                    <input id="aad-m-zip" name="Zipcode"  pattern="[0-9]{5}"  type="text" placeholder="Zipcode" required><br><br>
+                    <input id="aad-m-district" name="Intrested" type="text" placeholder="Interested in District(optional)" ><br><br>
+                    <input  type="submit" name="Sign Up" value="Sign Up" id="submit-form3">
                 </form> <p><big></big></p></div>
 
                        </p>
@@ -1018,8 +1019,8 @@ var sf=false;
             <div class="col-lg-8 mx-auto text-center">
             <div class="cmform">
                 <form id="feedback-m">
-                  <input name="Email" type="email" placeholder="Email" required><br>
-                   <textarea name="Feedback" type="text" placeholder="Comments" required></textarea><br>
+                  <input name="Email" type="email" id="feedback-m-email"  placeholder="Email" required><br>
+                   <textarea name="Feedback" id="feedback-m-comments" type="text" placeholder="Comments" required></textarea><br>
                     <input type="submit" name="Join" value="Give Feedback" id="submit-form2">
                 </form> <p><big></big></p></div>
 
@@ -1177,8 +1178,8 @@ We're building an army of young people to make climate change an urgent priority
 function validatesignupform()
 {
  var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-var e,z;
- if($('#signup-m-email').val()!=''&&$('#signup-m-email').val()!='')
+var e,z;e=false;z=false;
+ if($('#signup-m-email').val()!=''&&$('#signup-m-zip').val()!='')
   {  
 
 
@@ -1208,10 +1209,168 @@ else return false;
 
   }
 
-else return false;
+else 
+{
+if($('#signup-m-email').val()=='')$('#signup-m-email').addClass('err') ; else $('#signup-m-email').removeClass('err');
+if($('#signup-m-zip').val()=='') $('#signup-m-zip').addClass('err');else $('#signup-m-zip').removeClass('err');
+if(!$('#signup-m-email').val().match(re)) { $('#signup-m-email').addClass('err');}else $('#signup-m-email').removeClass('err');
+if(!confDist($('#signup-m-zip').val())==1) {
+ $('#signup-m-zip').addClass('err');
+   
+ }else $('#signup-m-zip').removeClass('err');
+    return false;
+}
 
 
 }
+
+
+
+
+
+
+function validateaadform()
+{
+ var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+ var ph=/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+ var hasNumber = /\d/;
+var e,z,n,t;
+e=false;z=false;n=false,t=false;
+ if($('#aad-m-email').val()!=''&&$('#aad-m-zip').val()!=''&&$('#aad-m-fn').val()!=''&&$('#aad-m-ln').val()!=''&&$('#aad-m-tel').val()!='')
+  {  
+
+
+
+if(!$('#aad-m-email').val().match(re)) { $('#aad-m-email').addClass('err');}
+else {
+
+ $('#aad-m-email').removeClass('err');
+ e=true;
+
+
+}
+if(!$('#aad-m-tel').val().match(ph)) { $('#aad-m-tel').addClass('err');}
+else {
+
+ $('#aad-m-tel').removeClass('err');
+ t=true;
+
+
+}
+
+if(!confDist($('#aad-m-zip').val())==1) {
+ $('#aad-m-zip').addClass('err');
+   
+ }
+ else{
+     $('#aad-m-zip').removeClass('err');
+     z=true;
+  
+
+ }
+
+ if(!hasNumber.test($('#aad-m-ln').val()) && !hasNumber.test($('#aad-m-fn').val())  ){
+    n=true;
+
+ }
+if(e&&z&&n&&t) return true;
+else return false;
+
+
+
+  }
+
+else 
+{
+if($('#aad-m-email').val()=='')$('#aad-m-email').addClass('err') ; else $('#aad-m-email').removeClass('err');
+if($('#aad-m-zip').val()=='') $('#aad-m-zip').addClass('err');else $('#aad-m-zip').removeClass('err');
+if($('#aad-m-ln').val()=='') $('#aad-m-ln').addClass('err');else $('#aad-m-ln').removeClass('err');
+if($('#aad-m-fn').val()=='') $('#aad-m-fn').addClass('err');else $('#aad-m-fn').removeClass('err');
+if($('#aad-m-tel').val()=='') $('#aad-m-tel').addClass('err');else $('#aad-m-tel').removeClass('err');
+if(!$('#aad-m-email').val().match(re)) { $('#aad-m-email').addClass('err');}else $('#aad-m-email').removeClass('err');
+
+if(!confDist($('#aad-m-zip').val())==1) {
+ $('#aad-m-zip').addClass('err');
+   
+ }else $('#aad-m-zip').removeClass('err');
+
+if(!$('#aad-m-tel').val().match(ph)) { $('#aad-m-tel').addClass('err');}
+else {
+
+ $('#aad-m-tel').removeClass('err');
+
+
+
+}
+
+
+
+    return false;
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function validatefeedbackform()
+{
+ var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+var e=false;
+ if($('#feedback-m-email').val()!=''&&$('#feedback-m-comments').val()!='')
+  {  
+
+
+
+if(!$('#feedback-m-email').val().match(re)) { $('#feedback-m-email').addClass('err');}
+else {
+
+ $('#feedback-m-email').removeClass('err');
+ e=true;
+
+
+}
+
+
+if(e) return true;
+else return false;
+
+
+
+  }
+
+
+
+else 
+{
+if($('#feedback-m-email').val()=='')$('#feedback-m-email').addClass('err');else $('#feedback-m-email').removeClass('err');
+if($('#feedback-m-comments').val()=='') $('#feedback-m-comments').addClass('err');else $('#feedback-m-comments').removeClass('err');
+if(!$('#feedback-m-email').val().match(re)) { $('#feedback-m-email').addClass('err');}else $('#feedback-m-email').removeClass('err');
+
+    return false;
+}
+
+
+
+
+
+
+
+
+}
+
 
 
     /**
@@ -1236,6 +1395,7 @@ else return false;
 
 $('#submit-form').on('click', function(e) {
   e.preventDefault();
+  if(!validatesignupform()) return false;
   var jqxhr = $.ajax({
     url: url,
     method: "GET",
@@ -1249,6 +1409,7 @@ $('#submit-form').on('click', function(e) {
 });
 $('#submit-form2').on('click', function(e) {
   e.preventDefault();
+  if(!validatefeedbackform()) return false;
   var jqxhr = $.ajax({
     url: url_,
     method: "GET",
@@ -1262,6 +1423,7 @@ $('#submit-form2').on('click', function(e) {
 
 $('#submit-form3').on('click', function(e) {
   e.preventDefault();
+   if(!validateaadform()) return false;
   var jqxhr = $.ajax({
     url: aurl,
     method: "GET",
