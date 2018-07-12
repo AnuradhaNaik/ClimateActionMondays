@@ -241,7 +241,7 @@ header.masthead {
                     <br>
 
                     <p style="    font-size: 14px;
-    "><big>We are calling on our politicians to sign the <b><b>#NoFossilFuelMoney</b></b> Pledge and the <b><b>#OffAct</b></b> Pledge . By electing politicians who care about the environment we strive to <b>#OutlawPollution </b>one congressional district at a time! Learn more about the <a href="#pledges">pledges</a> here! . Come to Climate Action Mondays an activist party and B.Y.O.B featuring live performances and  environmental activism every Monday.
+    "><big>We are calling on our politicians to sign the <b><b>#NoFossilFuelMoney</b></b> Pledge and the <b><b>#OffAct</b></b> Pledge . By electing politicians who care about the environment we strive to <b>#OutlawPollution </b>one congressional district at a time! Learn more about the <a href="#pledges">pledges</a> here! Come to Climate Action Mondays an activist party and B.Y.O.B featuring live performances and  environmental activism every Monday.
     </big>
     </p>
     </div>
@@ -318,7 +318,7 @@ margin-left:50px;font-size: small;padding:10px;border-radius: 8px;border:1px sol
 
 
 // Set the date we're counting down to
-var countDownDate = new Date("July 09, 2018 06:37:25").getTime();
+var countDownDate = new Date("July 16, 2018 06:37:25").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -442,7 +442,7 @@ var x = setInterval(function() {
     min-height: 500px;
     max-width: 800px;
     width: 60%;
-    height: 90vh;
+    height: 65vh;
     border: none;
 }
 .carousel{
@@ -725,8 +725,10 @@ div>img {
 
 
     <!-- Reps chunk starts -->
-                            <div style="margin-top: 70px;color:#525252;"  id="found-house" class="reps-in-house"><big style="border-bottom:1px double gainsboro">House</big>
 
+        <p id="districts"></p>
+                            <div style="margin-top: 70px;color:#525252;"  id="found-house" class="reps-in-house"><big style="border-bottom:1px double gainsboro">House</big>
+                       
 
                             </div>
                             <!-- Reps chunk finishes-->
@@ -751,7 +753,7 @@ var hf=false;
 var sf=false;
             $('#all-reps').velocity("fadeOut");  
             $('#repheader').velocity("fadeOut");
-
+            $('#districts').velocity('fadeOut');
                var zipcode=$('#cdval').val();
                var confdist=confDist(zipcode);
                console.log(' '+confdist);
@@ -768,7 +770,7 @@ var sf=false;
                                 fd[count]=St+'-'+dist[count];
                             
                             }
-
+                        
         Papa.parse("https://docs.google.com/spreadsheets/d/18l_7MPHoDdl7lRtp9uBtpNg_N6DyRrSrfvz-jY6Fr9g/export?format=csv&id=18l_7MPHoDdl7lRtp9uBtpNg_N6DyRrSrfvz-jY6Fr9g&gid=1512628366", {
     download: true,
     step: function(row) {
@@ -789,7 +791,7 @@ var sf=false;
                
 
                $('#found-house').append(addacandidate(row.data[0][0],row.data[0][1],row.data[0][4],row.data[0][6],row.data[0][7],row.data[0][15],row.data[0][16],row.data[0][10],row.data[0][11],row.data[0][12]));
-
+        
                 hf=true;
                 console.log(hf);
             }
@@ -805,8 +807,9 @@ var sf=false;
          $('#cdistrict').html(statenameabf(St));
                             console.log(hf+','+sf);
                             if(!hf){
-                                $('#found-house').css('display','none');
+                                $('#found-house').css('display','none'); $('#districts').html(' '+fd.toString()+' Will be updated when elections occur');
                             }
+                            else  $('#districts').html(' '+fd.toString());
                             if(!sf)
                             {
                                 $('#found-senate').css('display','none');
@@ -1218,6 +1221,7 @@ We're building an army of young people to make climate change an urgent priority
 
 
 <br class="br-tab">
+
 <big style="margin-top: 20px;">
 ©  All rights reserved.</big>
 </footer>
