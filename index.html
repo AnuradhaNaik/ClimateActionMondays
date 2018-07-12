@@ -236,12 +236,12 @@ header.masthead {
 
 
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Welcome to Climate Mondays!</h2>
+                    <h2 class="section-heading">Welcome to Climate Action Mondays!</h2>
                     <hr class="my-4">
                     <br>
 
                     <p style="    font-size: 14px;
-    "><big>We are calling on our politicians to sign the <b><b>#NoFossilFuelMoney</b></b> Pledge and the <b><b>#OffAct</b></b> Pledge . By electing politicians who care about the environment we strive to <b>#OutlawPollution </b>one congressional district at a time! Learn more about the <a href="#pledges">pledges</a> here! Come to Climate Action Mondays an activist party and B.Y.O.B featuring live performances and  environmental activism every Monday.
+    "><big>We are calling on our politicians to sign the <b><b>#NoFossilFuelMoney</b></b> Pledge and the <b><b>#OffAct</b></b> Pledge . By electing politicians who care about the environment we strive to <b>#OutlawPollution </b>one congressional district at a time! Learn more about the <a href="#pledges">pledges</a> here! Come to Climate Action Mondays a weekly gathering and B.Y.O.B featuring live performances and  environmental activism every Monday.
     </big>
     </p>
     </div>
@@ -249,9 +249,15 @@ header.masthead {
     </div>
     </section>
 
-
-
-
+<section class="p-0" id="whyNow" style="margin-top: 70px;">
+        <div class="container">
+            <div class="row" > <div class="col-lg-12  text-center">
+              <h2 class="section-heading" style="text-align: center;">Why Now? </h2>  <hr class="my-4"><br>
+<div style="text-align: left;">
+<p>The next decade is going to be instrumental in determining our way of life.If pollution levels remain constant for the next 20 years we will be over the 2 C limit set in the Paris Agreement which would mean unsustainable Pollution levels. In 2017 we lost over 300 Billion dollars in damages related to hurricanes ,fires and floods globally . Worldwide there are places which are literally running out of water because of fracking and coal.Not to mention having no clean water to drink till TODAY in  places like Flint and the state of Florida. </p>
+<p>Fortunately we have a solution which is the <a target="_blank" href="https://www.congress.gov/bill/115th-congress/house-bill/3671">Off Fossil Fuels Act</a> or the <b>OffAct</b> which transitions the energy economy to 100% renewable energy by 2035 . So now is the time for every candidate to choose  between  dirty energy like fracking and coal or the life of the people and planet. We have no time to waste,It is upto us to transition to a clean energy future.Let's do this! <br><center><b target="_blank" style="text-align: center" href="https://twitter.com/search?q=%23OutlawPollution">#OutlawPollution</b></center></p>
+</div></div>
+</div></div></section>
    
     <section class="p-0" id="upcoming" style="margin-top: 70px;">
         <div class="container">
@@ -726,7 +732,7 @@ div>img {
 
     <!-- Reps chunk starts -->
 
-        <p id="districts"></p>
+        <p id="districts">Hello</p>
                             <div style="margin-top: 70px;color:#525252;"  id="found-house" class="reps-in-house"><big style="border-bottom:1px double gainsboro">House</big>
                        
 
@@ -753,7 +759,7 @@ var hf=false;
 var sf=false;
             $('#all-reps').velocity("fadeOut");  
             $('#repheader').velocity("fadeOut");
-            $('#districts').velocity('fadeOut');
+           
                var zipcode=$('#cdval').val();
                var confdist=confDist(zipcode);
                console.log(' '+confdist);
@@ -807,13 +813,14 @@ var sf=false;
          $('#cdistrict').html(statenameabf(St));
                             console.log(hf+','+sf);
                             if(!hf){
-                                $('#found-house').css('display','none'); $('#districts').html(' '+fd.toString()+' Will be updated when elections occur');
+                                $('#found-house').css('display','none'); 
                             }
-                            else  $('#districts').html(' '+fd.toString());
+                            
                             if(!sf)
                             {
                                 $('#found-senate').css('display','none');
                             }
+                            $('#districts').html(' '+fd.toString());
                             $('#all-reps').velocity("fadeIn");
 
     }
