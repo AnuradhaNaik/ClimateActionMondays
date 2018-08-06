@@ -362,17 +362,23 @@ margin-left:50px;font-size: small;padding:10px;border-radius: 8px;border:1px sol
 
 
 // Set the date we're counting down to
-var countDownDate = new Date("July 30,2018 19:07:25").getTime();
 
+var d = new Date();
+d.setDate(d.getDate() + (1 + 7 - d.getDay()) % 7);
+d.setHours(19);
+console.log(d);
 // Update the count down every 1 second
 var x = setInterval(function() {
 
     // Get todays date and time
     var now = new Date().getTime();
     
+   // console.log(countDownDate1-countDownDate2);
     // Find the distance between now an the count down date
-    var distance = countDownDate - now;
-    
+    var distance = d - now;
+
+
+    console.log(distance);
     // Time calculations for days, hours, minutes and seconds
     var days = Math.floor(distance / (1000 * 60 * 60 * 24));
     var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -384,11 +390,17 @@ var x = setInterval(function() {
     + minutes + "m " + seconds + "s ";
     
     // If the count down is over, write some text 
-    if (distance < 0) {
+    if (distance < 0 && distance > -7201232  ) {
         clearInterval(x);
         document.getElementById("demo").innerHTML = "Happening Now";
+        
     }
+    
+   // 604800000
 }, 1000);
+
+function getNextMonday(countDownDate)
+{}
 </script>
 
 
@@ -617,7 +629,9 @@ var x = setInterval(function() {
                         A pledge to be a leader on climate change issues and support efforts in the community to move us off fossil fuels and achieve a just transition to 100% clean, renewable energy and to oppose any project that will expand fossil fuel production, and its use or transport, and work to quickly phase out existing fossil fuel infrastructure in my jurisdiction.
                         <br>
                         <br>
-                        <b> Taking the pledge entails putting support behind the Off Fossil Fuels for a Better Future Act (HR 3671) </b>and pledge, if elected, that one will co-sponsor the reintroduced version of this legislation in the 116th Congress.</p>
+                        <center><img src="img/TheBill.jpg" style="width: 75%;opacity: 0.8">
+</center>
+
                     <a class="btn" target="_blank" href="https://www.offfossilfuels.org/" style="padding:40px;outline:none;">Find Out More</a>
                 </div>
             </div>
